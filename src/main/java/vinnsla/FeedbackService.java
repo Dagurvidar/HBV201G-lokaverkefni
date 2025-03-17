@@ -12,7 +12,7 @@ public class FeedbackService {
 
         if (answer.toLowerCase().contains("final")) {
             return "Gott! \"final\" í Java gerir breytur óbreytanlegar. " +
-                    "Þú gætir einnig nefnt muninn á \"final\" og \"static\".";
+                    "Þú gætir einnig nefnt muninn áf \"final\" og \"static\".";
         }
 
         if (answer.toLowerCase().contains("recursion")) {

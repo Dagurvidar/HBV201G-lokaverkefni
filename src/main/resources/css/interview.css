@@ -1,0 +1,26 @@
+VBox {
+    -fx-spacing: 8px;
+    -fx-pref-height: 100%;
+}
+
+VBox > *:not(HBox):not(ButtonBar) {
+    -fx-vgrow: always;
+    }
+
+VBox * {
+    -fx-alignment: top-left;
+}
+
+HBox {
+    -fx-spacing: 16px;
+    -fx-alignment: center;
+}
+
+ButtonBar {
+    -fx-padding: 10px;
+    -fx-alignment: bottom-right;
+}
+
+Button {
+    -fx-alignment: center;
+}

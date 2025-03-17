@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" stylesheets="@../../css/interview.css" xmlns="http://javafx.com/javafx/11.0.14-internal"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.interviewtrainer.SpurningarController">
+    <children>
+        <HBox prefHeight="360.0" prefWidth="600.0">
+            <children>
+                <VBox prefHeight="206.0" prefWidth="243.0">
+                    <children>
+                        <Label prefHeight="18.0" prefWidth="101.0" text="Spurningaflokkar"/>
+                        <ListView fx:id="flokkarListView" prefHeight="185.0" prefWidth="170.0"/>
+                        <Label text="Spurningar"/>
+                        <ListView fx:id="spurningarListView" prefHeight="200.0" prefWidth="200.0"/>
+                    </children>
+                </VBox>
+                <VBox prefHeight="100.0" prefWidth="312.0">
+                    <children>
+                        <Label prefHeight="18.0" prefWidth="265.0" text="Spurningar sem hafa verið svaraðar:"/>
+                        <ListView fx:id="fxSvaradarSpurningar" prefHeight="79.0" prefWidth="312.0"/>
+                        <Label fx:id="fxFjoldiSvaradraSpurninga" text="Fjöldi svaraðra spurninga: 0"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <ButtonBar prefHeight="40.0" prefWidth="200.0">
+            <buttons>
+                <Button fx:id="fxSvara" mnemonicParsing="false" onAction="#handleOpenDialog" text="Svara"/>
+                <Button mnemonicParsing="false" onAction="#faraTilBaka" text="Til baka"/>
+                <Button mnemonicParsing="false" onAction="#haetta" text="Hætta"/>
+            </buttons>
+        </ButtonBar>
+    </children>
+</VBox>

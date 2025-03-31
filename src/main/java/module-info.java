@@ -3,6 +3,7 @@ module vidmot.interviewtrainer {
     requires javafx.fxml;
     requires okhttp3;
     requires org.json;
+    requires jdk.jsobject;
     requires java.dotenv;
 
 

@@ -18,7 +18,7 @@ public class FeedbackService {
     }
 
 
-    public static String getAIResponse(String userAnswer) throws IOException {
+    public static String getAIResponse(String answer) throws IOException {
         // setur upp HTTP-client svo hægt sé að senda á HTTP-server
         OkHttpClient client = new OkHttpClient();
 
@@ -26,7 +26,7 @@ public class FeedbackService {
         String json = "{ \"model\": \"gpt-3.5-turbo\", \"messages\": [ {" +
                 "\"role\": \"system\",\"content\": \"You are an AI that provides feedback on job interview answers.\"" +
                 "},{\"role\": \"user\"," +
-                " \"content\": \"Give feedback on this job interview answer: " + userAnswer + "\"" +
+                " \"content\": \"Give feedback on this job interview answer: " + answer + "\"" +
                 "} ], \"max_tokens\": 100 }";
 
         // fyrirspurninni pakkað í body sem verður hluti af request
@@ -54,8 +54,12 @@ public class FeedbackService {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        String userResponse = "I am a team player and I solve problems efficiently.";
-        System.out.println(provideFeedback(userResponse));
+    public static void main(String[] args) {
+        try {
+            String userResponse = "I am a team player and I solve problems efficiently.";
+            System.out.println(provideFeedback(userResponse));
+        } catch (IOException e) {
+            System.err.println("Villa við að fá svar frá AI: " + e.getMessage());
+        }
     }
 }

@@ -1,5 +1,6 @@
 package vinnsla;
 
+
 import io.github.cdimascio.dotenv.Dotenv;
 import okhttp3.*;
 import org.json.JSONObject;
@@ -22,12 +23,17 @@ public class FeedbackService {
         // setur upp HTTP-client svo hægt sé að senda á HTTP-server
         OkHttpClient client = new OkHttpClient();
 
+        answer = answer.trim().replace("\n", " ");
+
         // fyrirspurnin sem verður send á bakendann - aðlagaðu að þínum þörfum
         String json = "{ \"model\": \"gpt-3.5-turbo\", \"messages\": [ {" +
                 "\"role\": \"system\",\"content\": \"You are an AI that provides feedback on job interview answers.\"" +
                 "},{\"role\": \"user\"," +
                 " \"content\": \"Give feedback on this job interview answer: " + answer + "\"" +
                 "} ], \"max_tokens\": 100 }";
+
+        System.out.println("Sending JSON to API: " + json);
+
 
         // fyrirspurninni pakkað í body sem verður hluti af request
         RequestBody body = RequestBody.create(json, MediaType.get("application/json"));
@@ -51,15 +57,22 @@ public class FeedbackService {
             // og senda til viðmótsins
             return jsonSvar.getJSONArray("choices").getJSONObject(0).getJSONObject("message")
                     .getString("content");
+
         }
+
     }
 
+
     public static void main(String[] args) {
+        System.out.println("Loaded API Key: " + API_KEY);  // DEBUGGING LINE
         try {
             String userResponse = "I am a team player and I solve problems efficiently.";
-            System.out.println(provideFeedback(userResponse));
+            System.out.println("User input: " + userResponse);
+            String feedback = provideFeedback(userResponse);
+            System.out.println("AI Feedback: " + feedback);
         } catch (IOException e) {
-            System.err.println("Villa við að fá svar frá AI: " + e.getMessage());
+            System.err.println("Error fetching response from AI: " + e.getMessage());
         }
+
     }
 }

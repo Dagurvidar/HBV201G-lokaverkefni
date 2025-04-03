@@ -73,6 +73,5 @@ public class FeedbackService {
         } catch (IOException e) {
             System.err.println("Error fetching response from AI: " + e.getMessage());
         }
-
     }
 }

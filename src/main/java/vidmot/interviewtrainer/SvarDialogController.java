@@ -33,7 +33,12 @@ public class SvarDialogController extends Dialog<String> {
         setResultConverter(button -> {
             if (button == ButtonType.OK) {
                 String answer = fxTextArea.getText();
-                String feedback = FeedbackService.provideFeedback(answer);
+                String feedback = null;
+                try {
+                    feedback = FeedbackService.provideFeedback(answer);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 fxFeedbackLabel.setText(feedback);
                 return answer;
             }
@@ -44,8 +49,19 @@ public class SvarDialogController extends Dialog<String> {
     private void handleEnterPress(KeyEvent event) {
         if (event.getCode() == KeyCode.ENTER) {
             String userAnswer = fxTextArea.getText();
-            String feedback = FeedbackService.provideFeedback(userAnswer);
-            fxFeedbackLabel.setText(feedback);
+
+            // Run API call in a separate thread
+            new Thread(() -> {
+                try {
+                    String feedback = FeedbackService.provideFeedback(userAnswer);
+
+                    // Update UI on JavaFX thread
+                    javafx.application.Platform.runLater(() -> fxFeedbackLabel.setText(feedback));
+                } catch (IOException e) {
+                    javafx.application.Platform.runLater(() -> fxFeedbackLabel.setText("Villa við að fá svar frá AI."));
+                    e.printStackTrace();
+                }
+            }).start();
         }
     }
 

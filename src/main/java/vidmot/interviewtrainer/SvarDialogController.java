@@ -30,10 +30,12 @@ public class SvarDialogController extends Dialog<String> {
 
         fxTextArea.setOnKeyPressed(this::handleEnterPress);
 
+        FeedbackService service = new FeedbackService();
+
         setResultConverter(button -> {
             if (button == ButtonType.OK) {
                 String answer = fxTextArea.getText();
-                String feedback = FeedbackService.provideFeedback(answer);
+                String feedback = service.provideFeedback(answer);
                 fxFeedbackLabel.setText(feedback);
                 return answer;
             }
@@ -43,8 +45,9 @@ public class SvarDialogController extends Dialog<String> {
 
     private void handleEnterPress(KeyEvent event) {
         if (event.getCode() == KeyCode.ENTER) {
+            FeedbackService service = new FeedbackService();
             String userAnswer = fxTextArea.getText();
-            String feedback = FeedbackService.provideFeedback(userAnswer);
+            String feedback = service.provideFeedback(userAnswer);
             fxFeedbackLabel.setText(feedback);
         }
     }

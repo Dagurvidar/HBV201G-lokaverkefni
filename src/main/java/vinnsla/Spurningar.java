@@ -41,7 +41,7 @@ public class Spurningar {
         return fjoldiSvaradraSpurninga.get();
     }
 
-    public SimpleStringProperty fjoldiSvaradraSpurningaProperty() {
+    public SimpleStringProperty getFjoldiSvaradraSpurningaProperty() {
         return fjoldiSvaradraSpurninga;
     }
 
@@ -55,10 +55,10 @@ public class Spurningar {
 
     public static void main(String[] args) {
         Spurningar spurningar = new Spurningar();
-        // System.out.println (spurningar.getSpurningalisti("Tæknispurningar").get(0));
-        // System.out.println (spurningar.getSpurningalisti("Forritunarspurningar").get(1));
+        System.out.println (spurningar.getFjoldiSvaradraSpurninga());
+        System.out.println (spurningar.getFjoldiSvaradraSpurninga());
         ObservableList<String> flokkur1 = spurningar.getFlokkar();
-        System.out.println(flokkur1.get(0));
+        System.out.println(flokkur1.getFirst());
         System.out.println(spurningar.getSpurningarByCategory(flokkur1.get(0)));
     }
 }

@@ -1,15 +1,12 @@
 VBox {
     -fx-spacing: 8px;
     -fx-pref-height: 100%;
+    -fx-background-color: "030303";
 }
 
-VBox > *:not(HBox):not(ButtonBar) {
-    -fx-vgrow: always;
-    }
 
 VBox * {
     -fx-alignment: top-left;
-    /*-fx-background-color: red;*/
 }
 
 HBox {
@@ -17,11 +14,39 @@ HBox {
     -fx-alignment: center;
 }
 
-ButtonBar {
+Label {
+    -fx-text-fill: white;
+}
+
+TextArea,
+ListView {
+    -fx-background-color: "D4C9BE";
+}
+
+Button {
     -fx-padding: 10px;
     -fx-alignment: bottom-right;
+    -fx-background-color: "123458";
+    -fx-text-fill: #000000;
 }
 
 Button {
     -fx-alignment: center;
+}
+
+.list-cell:odd {
+    -fx-background-color: "D4C9BE";
+}
+
+.list-cell:even {
+    -fx-background-color: "F1EFEC";
+}
+
+.list-cell {
+    -fx-text-fill: black;
+}
+
+.list-cell:filled:selected, .list-cell:filled:selected:focused {
+    -fx-background-color: #3399ff;   /* Blue background for selected cell */
+    -fx-text-fill: white;            /* White text for contrast */
 }

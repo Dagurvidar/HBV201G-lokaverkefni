@@ -47,6 +47,6 @@ Button {
 }
 
 .list-cell:filled:selected, .list-cell:filled:selected:focused {
-    -fx-background-color: #3399ff;   /* Blue background for selected cell */
+    -fx-background-color: #123458;   /* Blue background for selected cell */
     -fx-text-fill: white;            /* White text for contrast */
 }

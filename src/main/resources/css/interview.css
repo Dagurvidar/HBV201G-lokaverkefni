@@ -9,6 +9,7 @@ VBox > *:not(HBox):not(ButtonBar) {
 
 VBox * {
     -fx-alignment: top-left;
+    /*-fx-background-color: red;*/
 }
 
 HBox {

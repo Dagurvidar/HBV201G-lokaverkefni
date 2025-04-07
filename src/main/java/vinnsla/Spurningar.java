@@ -24,22 +24,50 @@ public class Spurningar {
      * Smíðar nýjan Spurningar hlut og fyllir hann með flokkunum og spurningunum.
      */
     public Spurningar() {
-        flokkar.addAll("Tækni", "Forritun");
+        flokkar.addAll("Tækni", "Forritun", "Erfiðar Tækni", "Erfiðar Forritun", "Almennar Spurningar");
 
         ObservableList<String> taekniSpurningar = FXCollections.observableArrayList(
                 "What is the programming language developed by James Gosling at Sun Microsystems and named after the type of coffee from Indonesia?",
                 "One Terrabyte is how many Megabytes?",
-                "When a password is limited strictly to numeric characters, the secret is often referred to as a PIN. What does that acronym stand for?"
+                "When a password is limited strictly to numeric characters, the secret is often referred to as a PIN. What does that acronym stand for?",
+                "What does the acronym \"HTTP\" stand for in web development?",
+                "What technology is used to record cryptocurrency transactions?"
         );
-
         ObservableList<String> forritunarSpurningar = FXCollections.observableArrayList(
                 "What does the \"final\" keyword do in Java?",
-                "Hvenær er best að nota endurkvæmni í forritun og hvenær er betra að nota ítraða lausn?",
-                "How does the \"finally\" keyword work in a try-catch-finally block in Java?"
+                "When is best to use recursion in programing",
+                "How does the \"finally\" keyword work in a try-catch-finally block in Java?",
+                "What is the difference between a stack and a queue data structure?",
+                "What is the purpose of a constructor in object-oriented programming?",
+                "What does this piece of code do fxDagatal.setValue(LocalDate.now());?"
+        );
+        ObservableList<String> erfidtaekniSpurningar = FXCollections.observableArrayList(
+                "What is the purpose of the DNS system in networking?",
+                "What is the purpose of the DNS system in networking?",
+                "What is Moore's Law and how has it impacted the development of computers?",
+                "What are the main differences between volatile and non-volatile memory?",
+                "What is the significance of the OSI model in computer networking?"
+        );
+        ObservableList<String> erfidforritunarSpurningar = FXCollections.observableArrayList(
+                "What are the key differences between processes and threads?",
+                "What is a race condition, and how can it be prevented?",
+                "Explain the concept of \"dependency injection\" in software development.",
+                "What are the time complexities of binary search, merge sort, and quicksort in the best, average, and worst cases?",
+                "What is tail recursion, and how does it differ from standard recursion?"
         );
 
+        ObservableList<String> almennarspurningar = FXCollections.observableArrayList(
+                "Why did you pick this job",
+                "What are your strengths and weaknesses",
+                "Do you think you fit well in this jobs workplace",
+                "What is the biggest thing you overcame in the workplace?",
+                "Do you have any experience in coding?"
+        );
         spurningar.put("Tækni", taekniSpurningar);
         spurningar.put("Forritun", forritunarSpurningar);
+        spurningar.put("Erfiðar Tækni", erfidtaekniSpurningar);
+        spurningar.put("Erfiðar Forritun", erfidforritunarSpurningar);
+        spurningar.put("Almennar Spurningar", almennarspurningar);
     }
 
 

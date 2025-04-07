@@ -49,13 +49,9 @@ public class SvarDialogController extends Dialog<String> {
     private void handleEnterPress(KeyEvent event) {
         if (event.getCode() == KeyCode.ENTER) {
             String userAnswer = fxTextArea.getText();
-
-            // Run API call in a separate thread
             new Thread(() -> {
                 try {
                     String feedback = FeedbackService.provideFeedback(userAnswer);
-
-                    // Update UI on JavaFX thread
                     javafx.application.Platform.runLater(() -> fxFeedbackLabel.setText(feedback));
                 } catch (IOException e) {
                     javafx.application.Platform.runLater(() -> fxFeedbackLabel.setText("Villa við að fá svar frá AI."));

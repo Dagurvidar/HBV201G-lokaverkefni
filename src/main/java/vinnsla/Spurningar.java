@@ -36,7 +36,6 @@ public class Spurningar {
         spurningar.put(flokkur2, forritunarSpurningar);
     }
 
-
     public String getFjoldiSvaradraSpurninga() {
         return fjoldiSvaradraSpurninga.get();
     }

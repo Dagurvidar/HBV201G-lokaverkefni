@@ -3,9 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox styleClass="masterContainer" prefHeight="214.0" prefWidth="600.0" stylesheets="@../../css/interview.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.interviewtrainer.KvedjaController">
+<HBox styleClass="masterContainer" prefHeight="214.0" prefWidth="600.0" stylesheets="@../../css/interview.css"
+      xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vidmot.interviewtrainer.KvedjaController">
     <children>
-        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="130.0" prefWidth="374.0" style="-fx-text-fill: black;" text="Gangi þér vel í viðtalinu!" />
-        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#haetta" prefHeight="38.0" prefWidth="109.0" text="Hætta" />
+        <Label styleClass="importantLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="130.0" prefWidth="374.0"
+               style="-fx-text-fill: black;" text="Gangi þér vel í viðtalinu!"/>
+        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#haetta" prefHeight="38.0" prefWidth="109.0"
+                text="Hætta"/>
     </children>
 </HBox>

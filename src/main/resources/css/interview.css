@@ -1,7 +1,6 @@
 VBox {
     -fx-spacing: 8px;
     -fx-pref-height: 100%;
-    -fx-background-color: "#E8F1F5";
 }
 
 VBox * {
@@ -25,6 +24,7 @@ Label {
 
 .masterContainer {
     -fx-padding: 6px;
+    -fx-background-color: "#E8F1F5";
 }
 
 TextArea,

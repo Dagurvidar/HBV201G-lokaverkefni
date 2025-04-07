@@ -19,13 +19,12 @@ public class SvarDialogController extends Dialog<String> {
     public Label fxFeedbackLabel;
 
     public SvarDialogController(String selectedQuestion) {
-        setTitle("Svaraðu spurningu og fáðu endurgjöf frá " +
-                "ekki-það-snjalla bottanum okkar!");
+        setTitle("Answer a question and get a reply from our chatbot ");
 
         DialogPane dialogPane = loadDialogPane();
         setDialogPane(dialogPane);
 
-        fxFeedbackLabel.setText("Ýttu á Enter fyrir endurgjöf");
+        fxFeedbackLabel.setText("Press Enter to get feedback");
         fxSpurning.setText(selectedQuestion);
 
         fxTextArea.setOnKeyPressed(this::handleEnterPress);

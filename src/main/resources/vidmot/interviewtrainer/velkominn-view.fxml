@@ -11,12 +11,12 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
     <Label prefHeight="45.0" prefWidth="375.0"
-           text="Hæ, veriði velkomin(n) í viðtalsþjálfan. Ertu tilbúinn að verða besti umsækjandi sem þú getur verið?"
+           text="Hi, welcome to interview training. Are you ready to become the best applicant you can be?"
            wrapText="true" VBox.vgrow="ALWAYS"/>
     <ButtonBar prefHeight="40.0" prefWidth="200.0">
         <buttons>
-            <Button mnemonicParsing="false" onAction="#skiptaISpurningar" text="Spurningar"/>
-            <Button onAction="#haetta" text="Hætta"/>
+            <Button mnemonicParsing="false" onAction="#skiptaISpurningar" text="Questions"/>
+            <Button onAction="#haetta" text="Quit"/>
         </buttons>
     </ButtonBar>
 </VBox>

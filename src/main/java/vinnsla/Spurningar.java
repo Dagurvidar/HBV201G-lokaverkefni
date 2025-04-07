@@ -24,7 +24,7 @@ public class Spurningar {
      * Smíðar nýjan Spurningar hlut og fyllir hann með flokkunum og spurningunum.
      */
     public Spurningar() {
-        flokkar.addAll("Tækni", "Forritun", "Erfiðar Tækni", "Erfiðar Forritun", "Almennar Spurningar");
+        flokkar.addAll("Tech", "Programing", "Hard Tech", "Hard Programing", "General Questions");
 
         ObservableList<String> taekniSpurningar = FXCollections.observableArrayList(
                 "What is the programming language developed by James Gosling at Sun Microsystems and named after the type of coffee from Indonesia?",
@@ -63,11 +63,11 @@ public class Spurningar {
                 "What is the biggest thing you overcame in the workplace?",
                 "Do you have any experience in coding?"
         );
-        spurningar.put("Tækni", taekniSpurningar);
-        spurningar.put("Forritun", forritunarSpurningar);
-        spurningar.put("Erfiðar Tækni", erfidtaekniSpurningar);
-        spurningar.put("Erfiðar Forritun", erfidforritunarSpurningar);
-        spurningar.put("Almennar Spurningar", almennarspurningar);
+        spurningar.put("Tech", taekniSpurningar);
+        spurningar.put("Programing", forritunarSpurningar);
+        spurningar.put("Hard Tech", erfidtaekniSpurningar);
+        spurningar.put("Hard Programing", erfidforritunarSpurningar);
+        spurningar.put("General Questions", almennarspurningar);
     }
 
     public String getFjoldiSvaradraSpurninga() {

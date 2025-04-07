@@ -1,9 +1,8 @@
 VBox {
     -fx-spacing: 8px;
     -fx-pref-height: 100%;
-    -fx-background-color: "030303";
+    -fx-background-color: "#E8F1F5";
 }
-
 
 VBox * {
     -fx-alignment: top-left;
@@ -15,31 +14,46 @@ HBox {
 }
 
 Label {
-    -fx-text-fill: white;
+    -fx-text-fill: #1C2D45;
+}
+
+.masterContainer {
+    -fx-padding: 6px;
 }
 
 TextArea,
 ListView {
-    -fx-background-color: "D4C9BE";
+    -fx-padding: 0px;
+    -fx-background-color: "#D4C9BE";
+    -fx-border-width: 3px;
+    -fx-border-color: "#123458";
+    -fx-background-insets: 0;
+}
+
+ListView {
+    -fx-pref-height: 350px;
+    -fx-pref-width: 500px;
+}
+
+.list-view:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-insets: 0;
 }
 
 Button {
     -fx-padding: 10px;
-    -fx-alignment: bottom-right;
-    -fx-background-color: "123458";
-    -fx-text-fill: #000000;
-}
-
-Button {
     -fx-alignment: center;
+    -fx-background-color: "#123458";
+    -fx-text-fill: "#F1EFEC";
 }
 
 .list-cell:odd {
-    -fx-background-color: "D4C9BE";
+    -fx-background-color: "#D4C9BE";
 }
 
 .list-cell:even {
-    -fx-background-color: "F1EFEC";
+    -fx-background-color: "#F1EFEC";
 }
 
 .list-cell {
@@ -47,6 +61,6 @@ Button {
 }
 
 .list-cell:filled:selected, .list-cell:filled:selected:focused {
-    -fx-background-color: #123458;   /* Blue background for selected cell */
+    -fx-background-color: #305276;   /* Blue background for selected cell */
     -fx-text-fill: white;            /* White text for contrast */
 }

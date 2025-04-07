@@ -70,7 +70,6 @@ public class Spurningar {
         spurningar.put("Almennar Spurningar", almennarspurningar);
     }
 
-
     public String getFjoldiSvaradraSpurninga() {
         return fjoldiSvaradraSpurninga.get();
     }

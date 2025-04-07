@@ -27,10 +27,10 @@ public class FeedbackService {
 
         // fyrirspurnin sem verður send á bakendann - aðlagaðu að þínum þörfum
         String json = "{ \"model\": \"gpt-3.5-turbo\", \"messages\": [ {" +
-                "\"role\": \"system\",\"content\": \"You are an AI that provides feedback on job interview answers.\"" +
+                "\"role\": \"system\",\"content\": \"You are an AI that provides short feedback on job interview answers. Don't exceed 120 tokens\"" +
                 "},{\"role\": \"user\"," +
                 " \"content\": \"Give feedback on this job interview answer: " + answer + "\"" +
-                "} ], \"max_tokens\": 100 }";
+                "} ], \"max_tokens\": 120 }";
 
         System.out.println("Sending JSON to API: " + json);
 

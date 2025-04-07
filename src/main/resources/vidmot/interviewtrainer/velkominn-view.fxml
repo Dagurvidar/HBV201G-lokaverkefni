@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="180.0" prefWidth="415.0" spacing="20.0" stylesheets="@../../css/interview.css"
+<VBox styleClass="masterContainer" alignment="CENTER" prefHeight="180.0" prefWidth="415.0" spacing="20.0" stylesheets="@../../css/interview.css"
       xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="vidmot.interviewtrainer.VelkominnController">
     <padding>

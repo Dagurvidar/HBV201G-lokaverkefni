@@ -17,6 +17,12 @@ Label {
     -fx-text-fill: #1C2D45;
 }
 
+.importantLabel {
+    -fx-background-color: "#123458";
+    -fx-text-fill: "#E8F1F5";
+    -fx-font-size: 14;
+}
+
 .masterContainer {
     -fx-padding: 6px;
 }

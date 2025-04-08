@@ -3,35 +3,32 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="300.0" prefHeight="226.0" prefWidth="658.0"
-      styleClass="masterContainer" stylesheets="@../../css/interview.css"
-      xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="vidmot.interviewtrainer.SpurningarController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="300.0" prefHeight="226.0" prefWidth="658.0" styleClass="masterContainer" stylesheets="@../../css/interview.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.interviewtrainer.SpurningarController">
     <children>
         <HBox VBox.vgrow="ALWAYS">
             <children>
                 <VBox>
                     <children>
-                        <Label prefHeight="18.0" prefWidth="101.0" text="Spurningaflokkar"/>
-                        <ListView fx:id="flokkarListView" prefHeight="84.0" prefWidth="250.0"/>
-                        <Label text="Spurningar"/>
-                        <ListView fx:id="spurningarListView" prefHeight="79.0" prefWidth="250.0"/>
+                        <Label text="Question categories" />
+                        <ListView fx:id="flokkarListView" prefHeight="84.0" prefWidth="250.0" />
+                        <Label text="Spurningar" />
+                        <ListView fx:id="spurningarListView" prefHeight="79.0" prefWidth="250.0" />
                     </children>
                 </VBox>
                 <VBox>
                     <children>
-                        <Label prefHeight="18.0" prefWidth="265.0" text="Spurningar sem hafa verið svaraðar:"/>
-                        <ListView fx:id="fxSvaradarSpurningar" maxHeight="100.0"/>
-                        <Label fx:id="fxFjoldiSvaradraSpurninga" text="Fjöldi svaraðra spurninga: 0"/>
+                        <Label text="Questions answered:" />
+                        <ListView fx:id="fxSvaradarSpurningar" maxHeight="100.0" />
+                        <Label fx:id="fxFjoldiSvaradraSpurninga" text="Number of questions answered: 0" />
                     </children>
                 </VBox>
             </children>
         </HBox>
         <ButtonBar prefHeight="40.0">
             <buttons>
-                <Button fx:id="fxSvara" mnemonicParsing="false" onAction="#handleOpenDialog" text="Svara"/>
-                <Button mnemonicParsing="false" onAction="#faraTilBaka" text="Til baka"/>
-                <Button mnemonicParsing="false" onAction="#haetta" text="Hætta"/>
+                <Button fx:id="fxSvara" mnemonicParsing="false" onAction="#handleOpenDialog" text="Answer" />
+                <Button mnemonicParsing="false" onAction="#faraTilBaka" text="Go back" />
+                <Button mnemonicParsing="false" onAction="#haetta" text="Quit" />
             </buttons>
         </ButtonBar>
     </children>

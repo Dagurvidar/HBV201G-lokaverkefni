@@ -13,7 +13,7 @@ public class FeedbackService {
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
     public static String provideFeedback(String answer) throws IOException {
         if (answer == null || answer.trim().isEmpty()) {
-            return "Svarið þitt er tómt. Reyndu að útskýra betur!";
+            return "Your answer is empty!";
         }
         return getAIResponse(answer);
     }

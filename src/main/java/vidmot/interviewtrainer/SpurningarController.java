@@ -41,7 +41,7 @@ public class SpurningarController {
                 addListener(((obs, old, newCategory) -> {
                     if (newCategory != null) {
                         spurningarListView.setItems(spurningar.getSpurningarByCategory(newCategory));
-                        System.out.println(newCategory + " flokkurinn valinn");
+                        System.out.println(newCategory + " category chosen");
                     }
                 }));
 
@@ -61,10 +61,10 @@ public class SpurningarController {
 
             result.ifPresent(answer -> {
                 fjoldiSvaradraSpurninga++;
-                fxFjoldiSvaradraSpurninga.setText("Fjöldi svaraðra spurninga: " +
+                fxFjoldiSvaradraSpurninga.setText("Number of Question's answered: " +
                         Integer.toString(fjoldiSvaradraSpurninga));
                 items.add(selectedQuestion);
-                System.out.println("Notandi Svaraði: " + answer);
+                System.out.println("User answered: " + answer);
             });
         }
     }

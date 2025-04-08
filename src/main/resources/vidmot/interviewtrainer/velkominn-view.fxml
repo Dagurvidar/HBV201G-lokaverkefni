@@ -3,20 +3,23 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<VBox styleClass="masterContainer" alignment="CENTER" prefHeight="180.0" prefWidth="415.0" spacing="20.0" stylesheets="@../../css/interview.css"
-      xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="vidmot.interviewtrainer.VelkominnController">
+<VBox alignment="CENTER" spacing="20.0" styleClass="masterContainer" stylesheets="@../../css/interview.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.interviewtrainer.VelkominnController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <Label prefHeight="45.0" prefWidth="375.0"
-           text="Hæ, veriði velkomin(n) í viðtalsþjálfan. Ertu tilbúinn að verða besti umsækjandi sem þú getur verið?"
-           wrapText="true" VBox.vgrow="ALWAYS"/>
+    <Label text="Hi, welcome to interview training. Are you ready to become the best applicant you can be?" wrapText="true" VBox.vgrow="ALWAYS">
+      <font>
+         <Font size="18.0" />
+      </font>
+      <VBox.margin>
+         <Insets left="32.0" right="32.0" />
+      </VBox.margin></Label>
     <ButtonBar prefHeight="40.0" prefWidth="200.0">
         <buttons>
-            <Button mnemonicParsing="false" onAction="#skiptaISpurningar" text="Spurningar"/>
-            <Button onAction="#haetta" text="Hætta"/>
+            <Button mnemonicParsing="false" onAction="#skiptaISpurningar" text="Questions" />
+            <Button onAction="#haetta" text="Quit" />
         </buttons>
     </ButtonBar>
 </VBox>

@@ -2,14 +2,21 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<HBox styleClass="masterContainer" prefHeight="214.0" prefWidth="600.0" stylesheets="@../../css/interview.css"
-      xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="vidmot.interviewtrainer.KvedjaController">
-    <children>
-        <Label styleClass="importantLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="130.0" prefWidth="374.0"
-               style="-fx-text-fill: black;" text="Gangi þér vel í viðtalinu!"/>
-        <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#haetta" prefHeight="38.0" prefWidth="109.0"
-                text="Hætta"/>
-    </children>
-</HBox>
+<VBox styleClass="masterContainer" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.interviewtrainer.KvedjaController">
+   <children>
+      <HBox maxHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #123458;" stylesheets="@../../css/interview.css">
+          <children>
+              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="304.0" style="-fx-text-fill: white;" text="Gangi þér vel í viðtalinu!" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#haetta" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #E8F1F5; -fx-text-fill: black;" text="Hætta" />
+          </children>
+      </HBox>
+      <HBox maxHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" />
+   </children>
+</VBox>

@@ -8,12 +8,30 @@ import okhttp3.*;
 import org.json.JSONObject;
 
 import java.io.IOException;
-
+/******************************************************************************
+ *  Nafn    : Rúnar Þór Árnason og Dagur Ingi Viðar
+ *  T-póstur: rta3@hi.is, div6@hi.is
+ *
+ *  Lýsing  : Þessi klasi sér um samskipti við OpenAI API til að:
+ *            1. Gefa notanda viðbrögð við svörum hans við atvinnuviðtalsspurningum.
+ *            2. Búa til nýjar spurningar út frá notendaþema með hjálp AI.
+ *            Nýtir OpenAI GPT-3.5 Turbo API með JSON skilaboðasniði og OkHttp
+ *            fyrir HTTP-samskipti.
+ *
+ *****************************************************************************/
 public class FeedbackService {
     private static final Dotenv dotenv = Dotenv.load();
     private static final String API_KEY = dotenv.get("OPENAI_API_KEY");
     private static final String API_URL = "https://api.openai.com/v1/chat/completions";
-  
+
+    /**
+     * Skilar stuttu viðbragði við svörum notanda með hjálp AI.
+     *
+     * @param question Spurning sem notandi svaraði
+     * @param answer   Svar sem notandi gaf
+     * @return Stutt og uppbyggilegt viðbragð frá AI
+     * @throws IOException ef eitthvað fer úrskeiðis í samskiptum við API
+     */
     public static String provideFeedback(String question,String answer ) throws IOException {
         if (answer == null || answer.trim().isEmpty()) {
             return "Your answer is empty!";
@@ -21,7 +39,14 @@ public class FeedbackService {
         return getAIResponse(question, answer);
     }
 
-
+    /**
+     * Sendir spurningu og svar til OpenAI API og sækir viðbragð frá gervigreind.
+     *
+     * @param question Spurning úr viðtali
+     * @param answer   Svar notanda
+     * @return Stutt viðbragð frá AI byggt á svari
+     * @throws IOException ef netvilla eða villa í svari frá API
+     */
     public static String getAIResponse(String question, String answer) throws IOException {
         OkHttpClient client = new OkHttpClient();
 
@@ -53,6 +78,14 @@ public class FeedbackService {
     }
 
 
+    /**
+     * Býr til nýjan spurningaflokk út frá umræðuefni sem notandi gefur.
+     * Nýtir OpenAI til að fá 5 spurningar í listaformi.
+     *
+     * @param topic Efni eða þema fyrir spurningarnar
+     * @return Listi af spurningum sem AI bjó til
+     * @throws IOException ef villa kemur upp í samskiptum við API
+     */
     public static ObservableList<String> generateAIQuestions(String topic) throws IOException {
         OkHttpClient client = new OkHttpClient();
 
@@ -91,14 +124,14 @@ public class FeedbackService {
                 // Remove "1. ", "2. ", etc.
                 questions.add(line.replaceFirst("^\\d+\\.\\s*", "").trim());
             }
-
             return questions;
         }
     }
-
-
-
-
+    /**
+     * Debug-aðferð til að prófa samskipti við AI í keyrslu.
+     *
+     * @param args Engin notkun
+     */
     public static void main(String[] args) {
         System.out.println("Loaded API Key: " + API_KEY);  // DEBUGGING LINE
         try {

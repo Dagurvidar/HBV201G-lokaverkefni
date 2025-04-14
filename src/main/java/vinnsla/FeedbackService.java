@@ -2,6 +2,8 @@ package vinnsla;
 
 
 import io.github.cdimascio.dotenv.Dotenv;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import okhttp3.*;
 import org.json.JSONObject;
 
@@ -48,6 +50,51 @@ public class FeedbackService {
                     .getString("content");
         }
     }
+
+
+    public static ObservableList<String> generateAIQuestions(String topic) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+
+        String prompt = "Generate 5 job interview questions related to: " + topic;
+
+        String json = "{ \"model\": \"gpt-3.5-turbo\", \"messages\": [ {" +
+                "\"role\": \"system\",\"content\": \"You are an AI that generates concise, clear job interview questions only. Return only a numbered list without explanations.\"" +
+                "},{\"role\": \"user\"," +
+                " \"content\": \"" + prompt + "\"" +
+                "} ], \"max_tokens\": 300 }";
+
+        RequestBody body = RequestBody.create(json, MediaType.get("application/json"));
+        Request request = new Request.Builder()
+                .url(API_URL)
+                .post(body)
+                .addHeader("Authorization", "Bearer " + API_KEY)
+                .build();
+
+        try (Response response = client.newCall(request).execute()) {
+            if (!response.isSuccessful()) {
+                throw new RuntimeException("Error from AI: " + response.code());
+            }
+
+            String responseBody = response.body().string();
+            JSONObject jsonSvar = new JSONObject(responseBody);
+            String content = jsonSvar.getJSONArray("choices")
+                    .getJSONObject(0)
+                    .getJSONObject("message")
+                    .getString("content");
+
+            // Parse the numbered list of questions into individual strings
+            String[] lines = content.split("\\n");
+            ObservableList<String> questions = FXCollections.observableArrayList();
+
+            for (String line : lines) {
+                // Remove "1. ", "2. ", etc.
+                questions.add(line.replaceFirst("^\\d+\\.\\s*", "").trim());
+            }
+
+            return questions;
+        }
+    }
+
 
 
 

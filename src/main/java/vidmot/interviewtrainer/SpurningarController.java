@@ -76,4 +76,24 @@ public class SpurningarController {
     public void haetta() {
         ViewSwitcher.switchTo(View.KVEDJA);
     }
+
+    @FXML
+    private void handleNewAICategory() {
+        NyFlokkurDialogController dialog = new NyFlokkurDialogController();
+        Optional<NyFlokkurDialogController.CategoryResult> result = dialog.showAndWait();
+
+        result.ifPresent(categoryResult -> {
+            String categoryName = categoryResult.getCategoryName();
+            ObservableList<String> questions = categoryResult.getQuestions();
+
+            if (questions != null && !questions.isEmpty()) {
+                spurningar.addCategory(categoryName, questions);
+                flokkarListView.setItems(spurningar.getFlokkar());
+                flokkarListView.getSelectionModel().select(categoryName);
+
+                System.out.println("New AI category added: " + categoryName);
+                System.out.println("With questions: " + questions);
+            }
+        });
+    }
 }

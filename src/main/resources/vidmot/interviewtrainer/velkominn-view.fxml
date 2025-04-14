@@ -5,34 +5,36 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" styleClass="masterContainer" stylesheets="@../../css/interview.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.interviewtrainer.VelkominnController">
+<VBox alignment="CENTER" spacing="20.0" styleClass="masterContainer" stylesheets="@../../css/interview.css"
+      xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vidmot.interviewtrainer.VelkominnController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
     <VBox alignment="CENTER" VBox.vgrow="NEVER">
         <VBox.margin>
-            <Insets bottom="20.0" left="64.0" right="64.0" />
+            <Insets bottom="20.0" left="64.0" right="64.0"/>
         </VBox.margin>
         <children>
             <Label alignment="CENTER" text="Hi, welcome to interview training." textAlignment="CENTER" wrapText="true">
                 <font>
-                    <Font size="18.0" />
+                    <Font size="18.0"/>
                 </font>
             </Label>
             <Label alignment="CENTER" text="Are you ready to become the best applicant you can be?">
                 <font>
-                    <Font size="18.0" />
+                    <Font size="18.0"/>
                 </font>
             </Label>
         </children>
     </VBox>
     <ButtonBar maxWidth="800.0" prefHeight="40.0" prefWidth="200.0">
         <buttons>
-            <Button mnemonicParsing="false" onAction="#skiptaISpurningar" text="Questions" />
-            <Button onAction="#haetta" text="Quit" />
+            <Button mnemonicParsing="false" onAction="#skiptaISpurningar" text="Questions"/>
+            <Button onAction="#haetta" text="Quit"/>
         </buttons>
-      <VBox.margin>
-         <Insets left="64.0" right="64.0" />
-      </VBox.margin>
+        <VBox.margin>
+            <Insets left="64.0" right="64.0"/>
+        </VBox.margin>
     </ButtonBar>
 </VBox>

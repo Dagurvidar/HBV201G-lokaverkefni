@@ -4,30 +4,35 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<DialogPane prefHeight="345.0" prefWidth="650.0" styleClass="masterContainer" stylesheets="@../../css/interview.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<DialogPane prefHeight="345.0" prefWidth="650.0" styleClass="masterContainer" stylesheets="@../../css/interview.css"
+            xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
     <header>
         <Label fx:id="fxSpurning" style="-fx-text-fill: black; -fx-font-size: 14;" text="Question" wrapText="true">
-         <padding>
-            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-         </padding></Label>
+            <padding>
+                <Insets bottom="8.0" left="12.0" right="12.0" top="8.0"/>
+            </padding>
+        </Label>
     </header>
     <expandableContent>
     </expandableContent>
     <buttonTypes>
-        <ButtonType fx:constant="OK" />
-        <ButtonType fx:constant="CLOSE" />
+        <ButtonType fx:constant="OK"/>
+        <ButtonType fx:constant="CLOSE"/>
     </buttonTypes>
     <graphic>
-        <ScrollBar orientation="VERTICAL" />
+        <ScrollBar orientation="VERTICAL"/>
     </graphic>
     <content>
         <VBox prefHeight="236.0" prefWidth="391.0">
             <children>
-                <TextArea fx:id="fxTextArea" prefHeight="64.0" prefWidth="514.0" />
-                <Label fx:id="fxFeedbackLabel" alignment="TOP_LEFT" prefHeight="130.0" prefWidth="616.0" style="-fx-background-color: #F1EFEC; -fx-border-color: black; -fx-border-width: 3px; -fx-border-radius: 5;" wrapText="true">
-               <padding>
-                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-               </padding></Label>
+                <TextArea fx:id="fxTextArea" prefHeight="64.0" prefWidth="514.0"/>
+                <Label fx:id="fxFeedbackLabel" alignment="TOP_LEFT" prefHeight="130.0" prefWidth="616.0"
+                       style="-fx-background-color: #F1EFEC; -fx-border-color: black; -fx-border-width: 3px; -fx-border-radius: 5;"
+                       wrapText="true">
+                    <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0"/>
+                    </padding>
+                </Label>
             </children>
         </VBox>
     </content>

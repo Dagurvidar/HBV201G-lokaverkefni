@@ -16,7 +16,7 @@ public class InterviewApplication extends Application {
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
 
-        var scene = new Scene(new Pane(), 600, 400);
+        var scene = new Scene(new Pane(), 800, 500);
         ViewSwitcher.setScene(scene);
         ViewSwitcher.switchTo(View.VELKOMINN);
 

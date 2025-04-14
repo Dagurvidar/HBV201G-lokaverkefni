@@ -4,17 +4,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox styleClass="masterContainer" alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.interviewtrainer.KvedjaController" stylesheets="@../../css/interview.css">
+<VBox alignment="CENTER" styleClass="masterContainer" stylesheets="@../../css/interview.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.interviewtrainer.KvedjaController">
    <children>
       <HBox maxHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #123458;" >
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: #123458;">
           <children>
               <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-text-fill: #E8F1F5;" text="Good luck in the Interview!" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font></Label>
-              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#tilbaka" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #E8F1F5; -fx-text-fill: black;" text="Go back" />
-              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#haetta" prefHeight="38.0" prefWidth="109.0" style="-fx-background-color: #E8F1F5; -fx-text-fill: black;" text="Quit" />
+              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#tilbaka" prefHeight="38.0" prefWidth="109.0" styleClass="contrastButton" text="Go back" />
+              <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#haetta" prefHeight="38.0" prefWidth="109.0" styleClass="contrastButton" text="Quit" />
           </children>
       </HBox>
       <HBox maxHeight="-Infinity" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />

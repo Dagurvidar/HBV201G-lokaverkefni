@@ -34,7 +34,7 @@ public class SvarDialogController extends Dialog<String> {
                 String answer = fxTextArea.getText();
                 String feedback = null;
                 try {
-                    feedback = FeedbackService.provideFeedback(answer);
+                    feedback = FeedbackService.provideFeedback(fxSpurning.getText(),answer);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -50,7 +50,7 @@ public class SvarDialogController extends Dialog<String> {
             String userAnswer = fxTextArea.getText();
             new Thread(() -> {
                 try {
-                    String feedback = FeedbackService.provideFeedback(userAnswer);
+                    String feedback = FeedbackService.provideFeedback(fxSpurning.getText(), userAnswer);
                     javafx.application.Platform.runLater(() -> fxFeedbackLabel.setText(feedback));
                 } catch (IOException e) {
                     javafx.application.Platform.runLater(() -> fxFeedbackLabel.setText("Villa við að fá svar frá AI."));

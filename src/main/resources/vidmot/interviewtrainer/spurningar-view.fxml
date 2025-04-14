@@ -13,7 +13,7 @@
                     <children>
                         <VBox prefWidth="400.0">
                             <children>
-                                <Label text="Question categories"/>
+                                <Label text="Question categories:"/>
                                 <ListView fx:id="flokkarListView"/>
                             </children>
                         </VBox>
@@ -40,6 +40,15 @@
                     </buttons>
                 </ButtonBar>
             </children>
-        </VBox>
+        </HBox>
+        <ButtonBar prefHeight="40.0">
+            <buttons>
+                <Button text="New AI Category" onAction="#handleNewAICategory"/>
+                <Button fx:id="fxSvara" mnemonicParsing="false" onAction="#handleOpenDialog" text="Answer" />
+                <Button mnemonicParsing="false" onAction="#faraTilBaka" text="Go back" />
+                <Button mnemonicParsing="false" onAction="#haetta" text="Quit" />
+            </buttons>
+        </ButtonBar>
+
     </children>
 </VBox>

@@ -71,6 +71,13 @@ public class Spurningar {
         spurningar.put("General Questions", almennarspurningar);
     }
 
+    public void addCategory(String name, ObservableList<String> newQuestions) {
+        if (!flokkar.contains(name)) {
+            flokkar.add(name);
+            spurningar.put(name, newQuestions);
+        }
+    }
+
     public String getFjoldiSvaradraSpurninga() {
         return fjoldiSvaradraSpurninga.get();
     }

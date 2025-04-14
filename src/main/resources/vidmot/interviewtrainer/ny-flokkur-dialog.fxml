@@ -2,16 +2,20 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<DialogPane xmlns:fx="http://javafx.com/fxml" stylesheets="@../../css/interview.css">
+<DialogPane prefWidth="600.0" styleClass="masterContainer" stylesheets="@../../css/interview.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
     <content>
         <VBox spacing="10">
-            <Label text="Enter a topic for the new question category:"/>
-            <TextField fx:id="fxTopicField"/>
+            <Label styleClass="biggerText" text="Enter a topic for the new question category:">
+            <font>
+               <Font size="16.0" />
+            </font></Label>
+            <TextField fx:id="fxTopicField" prefHeight="100.0" />
         </VBox>
     </content>
     <buttonTypes>
-        <ButtonType fx:id="okButton" text="OK" buttonData="OK_DONE"/>
-        <ButtonType text="Cancel" buttonData="CANCEL_CLOSE"/>
+        <ButtonType fx:id="okButton" buttonData="OK_DONE" text="OK" />
+        <ButtonType buttonData="CANCEL_CLOSE" text="Cancel" />
     </buttonTypes>
 </DialogPane>

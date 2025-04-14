@@ -43,7 +43,7 @@ public class FeedbackService {
 
         try (Response response = client.newCall(request).execute()) {
             if (!response.isSuccessful()) {
-                throw new RuntimeException("Villa í svari" + response.code());
+                throw new RuntimeException("Response error: " + response.code());
             }
             String responseBody = response.body().string();
             JSONObject jsonSvar = new JSONObject(responseBody);

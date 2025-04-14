@@ -8,6 +8,14 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/******************************************************************************
+ *  Nafn    : Rúnar Þór Árnason og Dagur Ingi Viðar
+ *  T-póstur: rta3@hi.is, div6@hi.is
+ *
+ *  Lýsing  : ViewSwitcher sér um að skipta á milli mismunandi JavaFX viðmóta
+ *            með því að hlaða inn FXML skrám.
+ *
+ *****************************************************************************/
 public class ViewSwitcher {
     private static final Map<View, Parent> cache = new HashMap<>();
 

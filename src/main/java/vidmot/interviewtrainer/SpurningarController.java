@@ -12,7 +12,15 @@ import vinnsla.FeedbackService;
 import vinnsla.Spurningar;
 
 import java.util.Optional;
-
+/******************************************************************************
+ *  Nafn    : Rúnar Þór Árnason og Dagur Ingi Viðar
+ *  T-póstur: rta3@hi.is, div6@hi.is
+ *
+ *  Lýsing  : Controller fyrir spurningaviðmótið í Interview Trainer. Hér er hægt að skoða
+ *            flokka af spurningum, velja spurningu og svara henni. Einnig er hægt að bæta
+ *            við nýjum flokkum með aðstoð AI og fara til baka í annað viðmót.
+ *
+ *****************************************************************************/
 public class SpurningarController {
     @FXML
     public Button fxSvara;
@@ -26,11 +34,11 @@ public class SpurningarController {
     private ListView<String> spurningarListView;
 
     private final ObservableList<String> items = FXCollections.observableArrayList();
-
     private int fjoldiSvaradraSpurninga = 0;
-
     private final Spurningar spurningar = new Spurningar();
-
+    /**
+     * Upphafsstillir viðmótið. Bætir spurningaflokkum í lista og setur hlustara fyrir val.
+     */
     public void initialize() {
         fxSvara.setDisable(true);
         flokkarListView.setItems(spurningar.getFlokkar());
@@ -50,7 +58,10 @@ public class SpurningarController {
                     fxSvara.setDisable(newQuestion == null);
                 });
     }
-
+    /**
+     * Opnar dialog-glugga þar sem notandi getur slegið inn svar við valinni spurningu.
+     * Uppfærir fjölda svaraðra spurninga og listann með þeim sem búið er að svara.
+     */
     @FXML
     private void handleOpenDialog() {
         String selectedQuestion = spurningarListView.getSelectionModel().getSelectedItem();
@@ -68,15 +79,23 @@ public class SpurningarController {
             });
         }
     }
-
+    /**
+     * Færir notanda aftur í upphafssenu (Velkomin).
+     */
     public void faraTilBaka() {
         ViewSwitcher.switchTo(View.VELKOMINN);
     }
-
+    /**
+     * Færir notanda í kveðjuviðmótið þegar hætta er valið.
+     */
     public void haetta() {
         ViewSwitcher.switchTo(View.KVEDJA);
     }
-
+    /**
+     * Opnar glugga sem leyfir notanda að búa til nýjan AI-spurningaflokk.
+     * Ef gervigreind býr til spurningar, eru þær settar í nýjan flokk og
+     * bætt við viðmótið.
+     */
     @FXML
     private void handleNewAICategory() {
         NyFlokkurDialogController dialog = new NyFlokkurDialogController();

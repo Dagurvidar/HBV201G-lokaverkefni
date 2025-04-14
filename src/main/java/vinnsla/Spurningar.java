@@ -12,8 +12,10 @@ import java.util.Map;
  *  T-póstur: rta3@hi.is, div6@hi.is
  *
  *  Lýsing  : Spurningar klasi sem geymir lista af spurningum sem eru flokkaðar í
- *            tvo flokka: Viðmótsspurningar og Almennar spurningar. Hann veitir
- *            aðferðir til að fá spurningar eftir flokki og fjölda svaraðra spurninga.
+ *            fimm flokka: Tech, Programing, Hard Tech, Hard Programing og
+ *            General Questions. Hann veitir aðferðir til að nálgast spurningar
+ *            eftir flokki, bæta við nýjum flokkum og fylgjast með fjölda svaraðra
+ *            spurninga með Property binding fyrir JavaFX.
  *
  *****************************************************************************/
 public class Spurningar {
@@ -71,15 +73,17 @@ public class Spurningar {
         spurningar.put("General Questions", almennarspurningar);
     }
 
+    /**
+     * Bætir við nýjum flokki og tilheyrandi spurningum ef hann er ekki til þegar.
+     *
+     * @param name          Nafn á nýjum flokki
+     * @param newQuestions  Spurningalisti sem fylgir flokknum
+     */
     public void addCategory(String name, ObservableList<String> newQuestions) {
         if (!flokkar.contains(name)) {
             flokkar.add(name);
             spurningar.put(name, newQuestions);
         }
-    }
-
-    public String getFjoldiSvaradraSpurninga() {
-        return fjoldiSvaradraSpurninga.get();
     }
 
     /**
@@ -92,18 +96,39 @@ public class Spurningar {
         return spurningar.getOrDefault(flokkur, FXCollections.observableArrayList());
     }
 
+    /**
+     * Property sem gefur fjölda svaraðra spurninga.
+     * Hægt að binda við UI (t.d. texta eða töflu).
+     *
+     * @return SimpleStringProperty með fjölda
+     */
     public SimpleStringProperty fjoldiSvaradraSpurningaProperty() {
         return fjoldiSvaradraSpurninga;
     }
 
+    /**
+     * Skilar spurningum eftir tilteknum lykli.
+     *
+     * @param key Lykill sem á við flokk (t.d. "Tech")
+     * @return Spurningalisti fyrir þann flokk
+     */
     public ObservableList<String> getSpurningarByCategory(String key) {
         return spurningar.get(key);
     }
 
+    /**
+     * Skilar observable lista af öllum tiltækum flokkum.
+     *
+     * @return ObservableList af nöfnum flokka
+     */
     public ObservableList<String> getFlokkar() {
         return flokkar;
     }
 
+    /**
+     * Aðal aðferð til að prófa virkni beint í console.
+     * @param args ekki notað
+     */
     public static void main(String[] args) {
         Spurningar spurningar = new Spurningar();
         System.out.println(spurningar.getSpurningalisti("Tækni").get(0));

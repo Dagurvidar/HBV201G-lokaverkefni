@@ -11,11 +11,13 @@ public class KvedjaController {
 
     /**
      * Færir notenda aftur tilbaka í spurninga senuna
+     *
      * @param event kveikt þegar notendi ýtir á takkan
      */
     @FXML
-    private void tilbaka(ActionEvent event)  {
-        ViewSwitcher.switchTo(View.SPURNINGAR);}
+    private void tilbaka(ActionEvent event) {
+        ViewSwitcher.switchTo(View.SPURNINGAR);
+    }
 }
 
 

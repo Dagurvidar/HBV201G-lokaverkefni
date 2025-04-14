@@ -20,6 +20,7 @@ public class Spurningar {
     private final ObservableList<String> flokkar = FXCollections.observableArrayList();
     private final Map<String, ObservableList<String>> spurningar = new HashMap<>();
     private final SimpleStringProperty fjoldiSvaradraSpurninga = new SimpleStringProperty("0");
+
     /**
      * Smíðar nýjan Spurningar hlut og fyllir hann með flokkunum og spurningunum.
      */
@@ -73,6 +74,7 @@ public class Spurningar {
     public String getFjoldiSvaradraSpurninga() {
         return fjoldiSvaradraSpurninga.get();
     }
+
     /**
      * Skilar lista af spurningum fyrir tiltekinn flokk.
      *
@@ -97,8 +99,8 @@ public class Spurningar {
 
     public static void main(String[] args) {
         Spurningar spurningar = new Spurningar();
-        System.out.println (spurningar.getSpurningalisti("Tækni").get(0));
-        System.out.println (spurningar.getSpurningalisti("Forritun").get(1));
+        System.out.println(spurningar.getSpurningalisti("Tækni").get(0));
+        System.out.println(spurningar.getSpurningalisti("Forritun").get(1));
         ObservableList<String> flokkur1 = spurningar.getFlokkar();
         System.out.println(flokkur1.get(0));
         System.out.println(spurningar.getSpurningarByCategory(flokkur1.get(0)));

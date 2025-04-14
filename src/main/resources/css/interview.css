@@ -3,10 +3,6 @@ VBox {
     -fx-pref-height: 100%;
 }
 
-VBox * {
-    -fx-alignment: top-left;
-}
-
 HBox {
     -fx-spacing: 16px;
     -fx-alignment: center;
@@ -17,22 +13,22 @@ Label {
 }
 
 .importantLabel {
-    -fx-background-color: "#123458";
-    -fx-text-fill: "#E8F1F5";
+    -fx-background-color: #123458;
+    -fx-text-fill: #E8F1F5;
     -fx-font-size: 14;
 }
 
 .masterContainer {
     -fx-padding: 6px;
-    -fx-background-color: "#E8F1F5";
+    -fx-background-color: #E8F1F5;
 }
 
 TextArea,
 ListView {
     -fx-padding: 0px;
-    -fx-background-color: "#D4C9BE";
+    -fx-background-color: #D4C9BE;
     -fx-border-width: 3px;
-    -fx-border-color: "#123458";
+    -fx-border-color: #123458;
     -fx-background-insets: 0;
 }
 
@@ -50,8 +46,8 @@ ListView {
 Button {
     -fx-padding: 10px;
     -fx-alignment: center;
-    -fx-background-color: "#123458";
-    -fx-text-fill: "#F1EFEC";
+    -fx-background-color: #123458;
+    -fx-text-fill: #F1EFEC;
 }
 
 Button:hover {
@@ -69,11 +65,11 @@ Button:hover {
 }
 
 .list-cell:odd {
-    -fx-background-color: "#D4C9BE";
+    -fx-background-color: #D4C9BE;
 }
 
 .list-cell:even {
-    -fx-background-color: "#F1EFEC";
+    -fx-background-color: #F1EFEC;
 }
 
 .list-cell {

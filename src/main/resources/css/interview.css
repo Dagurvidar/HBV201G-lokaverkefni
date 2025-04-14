@@ -10,6 +10,11 @@ HBox {
 
 Label {
     -fx-text-fill: #1C2D45;
+    -fx-font-size: 14px;
+}
+
+.biggerText {
+    -fx-font-size: 18px;
 }
 
 .importantLabel {

@@ -3,7 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" minHeight="300.0" prefWidth="700.0" styleClass="masterContainer" stylesheets="@../../css/interview.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.interviewtrainer.SpurningarController">
+<VBox alignment="CENTER" minHeight="300.0" prefWidth="700.0" styleClass="masterContainer"
+      stylesheets="@../../css/interview.css" xmlns="http://javafx.com/javafx/11.0.14-internal"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="vidmot.interviewtrainer.SpurningarController">
     <children>
         <VBox alignment="CENTER" maxWidth="-Infinity" prefWidth="1000.0" VBox.vgrow="ALWAYS">
             <children>
@@ -11,31 +13,31 @@
                     <children>
                         <VBox prefWidth="300.0">
                             <children>
-                                <Label text="Question categories:" />
-                                <ListView fx:id="flokkarListView" />
+                                <Label text="Question categories:"/>
+                                <ListView fx:id="flokkarListView"/>
                             </children>
                         </VBox>
                         <VBox prefWidth="600.0">
                             <children>
-                                <Label text="Spurningar" />
-                                <ListView fx:id="spurningarListView" />
+                                <Label text="Spurningar"/>
+                                <ListView fx:id="spurningarListView"/>
                             </children>
                         </VBox>
                     </children>
                 </HBox>
                 <VBox VBox.vgrow="ALWAYS">
                     <children>
-                        <Label text="Questions answered:" />
-                        <ListView fx:id="fxSvaradarSpurningar" maxHeight="100.0" VBox.vgrow="ALWAYS" />
-                        <Label fx:id="fxFjoldiSvaradraSpurninga" text="Number of questions answered: 0" />
+                        <Label text="Questions answered:"/>
+                        <ListView fx:id="fxSvaradarSpurningar" maxHeight="100.0" VBox.vgrow="ALWAYS"/>
+                        <Label fx:id="fxFjoldiSvaradraSpurninga" text="Number of questions answered: 0"/>
                     </children>
                 </VBox>
                 <ButtonBar prefHeight="40.0">
                     <buttons>
-                        <Button onAction="#handleNewAICategory" text="New AI Category" />
-                        <Button fx:id="fxSvara" mnemonicParsing="false" onAction="#handleOpenDialog" text="Answer" />
-                        <Button mnemonicParsing="false" onAction="#faraTilBaka" text="Go back" />
-                        <Button mnemonicParsing="false" onAction="#haetta" text="Quit" />
+                        <Button onAction="#handleNewAICategory" text="New AI Category"/>
+                        <Button fx:id="fxSvara" mnemonicParsing="false" onAction="#handleOpenDialog" text="Answer"/>
+                        <Button mnemonicParsing="false" onAction="#faraTilBaka" text="Go back"/>
+                        <Button mnemonicParsing="false" onAction="#haetta" text="Quit"/>
                     </buttons>
                 </ButtonBar>
             </children>

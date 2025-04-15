@@ -11,7 +11,7 @@
             <children>
                 <HBox VBox.vgrow="ALWAYS">
                     <children>
-                        <VBox prefWidth="400.0">
+                        <VBox prefWidth="300.0">
                             <children>
                                 <Label text="Question categories:"/>
                                 <ListView fx:id="flokkarListView"/>
@@ -34,10 +34,10 @@
                 </VBox>
                 <ButtonBar prefHeight="40.0">
                     <buttons>
-                        <Button text="New AI Category" onAction="#handleNewAICategory"/>
-                        <Button fx:id="fxSvara" mnemonicParsing="false" onAction="#handleOpenDialog" text="Answer" />
-                        <Button mnemonicParsing="false" onAction="#faraTilBaka" text="Go back" />
-                        <Button mnemonicParsing="false" onAction="#haetta" text="Quit" />
+                        <Button onAction="#handleNewAICategory" text="New AI Category"/>
+                        <Button fx:id="fxSvara" mnemonicParsing="false" onAction="#handleOpenDialog" text="Answer"/>
+                        <Button mnemonicParsing="false" onAction="#faraTilBaka" text="Go back"/>
+                        <Button mnemonicParsing="false" onAction="#haetta" text="Quit"/>
                     </buttons>
                 </ButtonBar>
             </children>
